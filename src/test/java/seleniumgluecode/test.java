@@ -4,6 +4,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -33,7 +34,11 @@ public class test {
 
     @Then("^Nos debe redirigir a la pantalla comics$")
     public void nos_debe_redirigir_a_la_pantalla_comics() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+        WebElement pageTitleLocator = driver.findElement(By.className("page-title"));
+        Assert.assertTrue( "No se redirecciono correctamente a la pagina de comics", pageTitleLocator.isDisplayed());
+        Assert.assertEquals( "Category: comics", pageTitleLocator.getText());
+
+
 
     }
 
