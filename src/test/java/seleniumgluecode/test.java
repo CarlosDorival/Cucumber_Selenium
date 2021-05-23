@@ -4,7 +4,11 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.sql.Driver;
 
 public class test {
 
@@ -22,7 +26,8 @@ public class test {
 
     @When("^Hace click sobre el botón the little tester comics$")
     public void hace_click_sobre_el_botón_the_little_tester_comics() throws Throwable {
-
+        WebElement titleComicsLocator = driver.findElement(By.id("menu-item-2008"));
+        titleComicsLocator.click();
 
     }
 
